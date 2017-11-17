@@ -30,7 +30,7 @@ exports.read_a_product = (req, res) => {
 
 exports.update_a_product = (req, res) => {
   product.findOneAndUpdate(
-    { id: req.params.productId },
+    { _id: req.params.productId },
     req.body,
     { new: true },
     (err, product) => {
@@ -43,7 +43,7 @@ exports.update_a_product = (req, res) => {
 
 exports.delete_a_product = (req, res) => {
   product.remove({
-    id: req.params.productId
+    _id: req.params.productId
   }, (err, product) => {
     if (err)
       res.send(err);

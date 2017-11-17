@@ -30,7 +30,7 @@ exports.read_a_supplier = (req, res) => {
 
 exports.update_a_supplier = (req, res) => {
   supplier.findOneAndUpdate(
-    { id: req.params.supplierId },
+    { _id: req.params.supplierId },
     req.body,
     { new: true },
     (err, supplier) => {
@@ -43,7 +43,7 @@ exports.update_a_supplier = (req, res) => {
 // supplier.remove({}).exec(function(){});
 exports.delete_a_supplier = (req, res) => {
   supplier.remove({
-    id: req.params.supplierId
+    _id: req.params.supplierId
   }, (err, supplier) => {
     if (err)
       res.send(err);

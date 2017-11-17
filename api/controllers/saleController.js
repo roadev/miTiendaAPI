@@ -30,7 +30,7 @@ exports.read_a_sale = (req, res) => {
 
 exports.update_a_sale = (req, res) => {
   sale.findOneAndUpdate(
-    { id: req.params.saleId},
+    { _id: req.params.saleId},
     req.body,
     { new: true },
     (err, sale) => {
