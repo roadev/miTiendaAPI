@@ -1,19 +1,19 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const mongoose = require('mongoose');
-const Sale = require('./api/models/saleModel');
+const Post = require('./api/models/postModel');
 const bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/SalesDB');
+mongoose.connect('mongodb://localhost/Blogdb');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-var routes = require('./api/routes/saleRoutes');
+var routes = require('./api/routes/postRoutes');
 routes(app);
 
 app.use(function(req, res) {
@@ -22,4 +22,4 @@ app.use(function(req, res) {
 
 app.listen(port);
 
-console.log('sale list RESTful API server started on: ' + port);
+console.log('post list RESTful API server started on: ' + port);
