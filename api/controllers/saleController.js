@@ -7,12 +7,14 @@ exports.list_all_sales = (req, res) => {
   sale.find({}, (err, sale) => {
     if (err)
       res.send(err);
+    console.log(sale);
     res.json(sale);
   });
 };
 
 exports.create_a_sale = (req, res) => {
   const new_sale = new sale(req.body);
+  console.log(req.body);
   new_sale.save((err, sale) => {
     if (err)
       res.send(err);
