@@ -40,7 +40,7 @@ exports.update_a_supplier = (req, res) => {
     }
   );
 };
-// supplier.remove({}).exec(function(){});
+
 exports.delete_a_supplier = (req, res) => {
   supplier.remove({
     _id: req.params.supplierId
